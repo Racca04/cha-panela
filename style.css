@@ -29,15 +29,131 @@ body {
 }
 
 .hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  letter-spacing: 8px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-style: italic;
+  color: #888;
+}
+
+.couple-gallery {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f5f5f5;
+  margin-bottom: 100px;
+}
+
+.couple-title {
   font-size: 48px;
   letter-spacing: 4px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* efeito elegante ao passar o mouse */
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .couple-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .couple-gallery {
+    margin-bottom: 60px;
+  }
+}
+
+.cores-presentes {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cores-presentes h2 {
+  margin-bottom: 30px;
+}
+
+.cores-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+}
+
+.circulo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+/* Cores */
+.branco {
+  background: #f2f2f2;
+}
+
+.preto {
+  background: #000;
+}
+
+.inox {
+  background: linear-gradient(135deg, #d9d9d9, #9e9e9e, #e6e6e6);
+}
+
+.bambu {
+  background: linear-gradient(135deg, #d8a45c, #c8924a, #e3b877);
 }
 
 .countdown {
   background: #111;
-  color: #fff;
-  padding: 60px 20px;
+  color: #ffffff;
+  padding: 80px 20px;
   text-align: center;
+  margin-top: 60px;
 }
 
 .timer {
@@ -48,8 +164,8 @@ body {
 }
 
 .timer div {
-  background: #fff;
-  color: #000;
+  background: #ffffff;
+  color: #000000;
   padding: 20px;
   width: 90px;
   border-radius: 8px;
@@ -87,7 +203,7 @@ body {
   padding: 12px;
   width: 100%;
   border: none;
-  background: #000;
+  background: #000000;
   color: #fff;
   cursor: pointer;
   border-radius: 6px;
@@ -115,4 +231,80 @@ body {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #eee;
+}
+
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.cart {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.cart.open {
+  right: 0;
+}
+
+@media (max-width: 600px) {
+  .cart {
+    width: 100%;
+  }
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.cart-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cart-info span {
+  font-size: 13px;
+  color: #555;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
 }
